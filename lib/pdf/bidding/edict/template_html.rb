@@ -31,16 +31,20 @@ module Pdf::Bidding
         '@@cooperative.name@@' => cooperative.name,
         '@@cooperative.address.address@@' => cooperative.address.address,
         '@@cooperative.address.city.name@@' => cooperative.address.city.name,
-        '@@cooperative.address.city.state.name@@' =>
-          cooperative.address.city.state.name,
+        '@@cooperative.address.city.state.name@@' => cooperative.address.city.state.name,
         '@@cooperative.cnpj@@' => cooperative.cnpj,
-        '@@cooperative.legal_representative.name@@' =>
-          cooperative.legal_representative.name,
+        '@@cooperative.legal_representative.name@@' =>cooperative.legal_representative.name,
         '@@bidding.title@@' => bidding.title,
         '@@bidding.items@@' => bidding_items,
         '@@bidding.proposals@@' => fill_tables,
-        '@@bidding.closing_date@@' => format_date(bidding.closing_date),
-        '@@current_date@@' => format_date(Date.current)
+	      '@@bidding.estimated_cost_total@@' => format_money(bidding.estimated_cost_total),
+	      '@@bidding.closing_date@@' => format_date(bidding.closing_date),
+        '@@current_date@@' => format_date(Date.current),
+	      '@@bidding.description@@' => bidding.description,
+	      '@@user.email@@' => user.email,
+	      '@@user.phone@@' => user.phone,
+        '@@cooperative.address.cep@@' => cooperative.address.cep,    
+     	  '@@cooperative.user.name@@'=> cooperative.user.name
       }
     end
 
@@ -96,6 +100,10 @@ module Pdf::Bidding
           "<td>#{lot_group_item.item.unit_name}</td>"\
         "</tr>"
       )
+    end
+
+    def format_money(money)
+        "R$ "+sprintf('%.2f',money).reverse.scan(/(\d*\.\d{1,3}|\d{1,3})/).join(',').reverse
     end
 
     def surrond_with_table_tag
