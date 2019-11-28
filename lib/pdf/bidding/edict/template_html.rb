@@ -41,8 +41,8 @@ module Pdf::Bidding
 	      '@@bidding.closing_date@@' => format_date(bidding.closing_date),
         '@@current_date@@' => format_date(Date.current),
 	      '@@bidding.description@@' => bidding.description,
-	      '@@user.email@@' => user.email,
-	      '@@user.phone@@' => user.phone,
+	      '@@user.email@@' => cooperative.user.email,
+	      '@@user.phone@@' => cooperative.user.phone,
         '@@cooperative.address.cep@@' => cooperative.address.cep,    
      	  '@@cooperative.user.name@@'=> cooperative.user.name
       }
