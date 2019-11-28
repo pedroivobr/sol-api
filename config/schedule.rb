@@ -34,7 +34,7 @@ every 1.day, at: '08:00 am', roles: [:app] do
   runner "Bidding::ApprovedToOngoingWorker.perform_async"
 end
 
-every 1.day, at: '12:00 pm', roles: [:app] do
+every 1.day, at: '11:59 pm', roles: [:app] do
   runner "Bidding::OngoingToUnderReviewWorker.perform_async"
   runner "Bidding::DrawToUnderReviewWorker.perform_async"
 end
