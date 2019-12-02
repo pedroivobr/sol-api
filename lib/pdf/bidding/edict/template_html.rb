@@ -37,14 +37,14 @@ module Pdf::Bidding
         '@@bidding.title@@' => bidding.title,
         '@@bidding.items@@' => bidding_items,
         '@@bidding.proposals@@' => fill_tables,
-	      '@@bidding.estimated_cost_total@@' => format_money(bidding.estimated_cost_total),
-	      '@@bidding.closing_date@@' => format_date(bidding.closing_date),
+	'@@bidding.estimated_cost_total@@' => format_money(bidding.estimated_cost_total),
+	'@@bidding.closing_date@@' => format_date(bidding.closing_date),
         '@@current_date@@' => format_date(Date.current),
-	      '@@bidding.description@@' => bidding.description,
-	      '@@user.email@@' => cooperative.user.email,
-	      '@@user.phone@@' => cooperative.user.phone,
+	'@@bidding.description@@' => bidding.description,
+	'@@user.email@@' => cooperative.users.first.email,
+	'@@user.phone@@' => cooperative.users.first.phone,
         '@@cooperative.address.cep@@' => cooperative.address.cep,    
-     	  '@@cooperative.user.name@@'=> cooperative.user.name
+	'@@cooperative.user.name@@'=> cooperative.users.first.name
       }
     end
 
