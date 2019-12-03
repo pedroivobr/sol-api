@@ -41,8 +41,8 @@ module Pdf::Bidding
 	'@@bidding.closing_date@@' => format_date(bidding.closing_date),
         '@@current_date@@' => format_date(Date.current),
 	'@@bidding.description@@' => bidding.description,
-	'@@user.email@@' => cooperative.users.first.email,
-	'@@user.phone@@' => cooperative.users.first.phone,
+	'@@user.email@@' => User.where(cpf: legal_representative.cpf).first['email'],
+	'@@user.phone@@' => User.where(cpf: legal_representative.cpf).first['phone'],
         '@@cooperative.address.cep@@' => cooperative.address.cep,    
 	'@@cooperative.user.name@@'=> cooperative.users.first.name
       }
@@ -133,6 +133,11 @@ module Pdf::Bidding
         File.read(
           Rails.root.join('lib', 'pdf', 'bidding', 'edict', 'templates', 'edict.html')
         )
+    end
+
+    def LegalRepresentative_email(CPF)
+	user = User.where(cpf: CPF)
+	user[0]['email']
     end
   end
 end
