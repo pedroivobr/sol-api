@@ -124,7 +124,8 @@ module Pdf::Bidding
     end
 
     def bidding_not_able_to_generate?
-      !(bidding.approved? || bidding.ongoing?)
+     #!(bidding.approved? || bidding.ongoing?)
+	false
     end
 
     def template_data
