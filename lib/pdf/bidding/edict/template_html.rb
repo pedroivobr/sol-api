@@ -41,8 +41,8 @@ module Pdf::Bidding
 	'@@bidding.closing_date@@' => format_date(bidding.closing_date),
         '@@current_date@@' => format_date(Date.current),
 	'@@bidding.description@@' => bidding.description,
-	'@@user.email@@' => User.find_by(cpf: legal_representative.cpf)&.email,
-	'@@user.phone@@' => User.find_by(cpf: legal_representative.cpf)&.phone,
+	'@@user.email@@' => User.find_by(cpf: cooperative.legal_representative.cpf)&.email,
+	'@@user.phone@@' => User.find_by(cpf: cooperative.legal_representative.cpf)&.phone,
         '@@cooperative.address.cep@@' => cooperative.address.cep,    
 	'@@cooperative.user.name@@'=> cooperative.users.first.name
       }
