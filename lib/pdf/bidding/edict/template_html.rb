@@ -134,10 +134,5 @@ module Pdf::Bidding
           Rails.root.join('lib', 'pdf', 'bidding', 'edict', 'templates', 'edict.html')
         )
     end
-
-    def LegalRepresentative_email(CPF)
-	user = User.where(cpf: CPF)
-	user[0]['email']
-    end
   end
 end
