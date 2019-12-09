@@ -31,16 +31,20 @@ module Pdf::Bidding
         '@@cooperative.name@@' => cooperative.name,
         '@@cooperative.address.address@@' => cooperative.address.address,
         '@@cooperative.address.city.name@@' => cooperative.address.city.name,
-        '@@cooperative.address.city.state.name@@' =>
-          cooperative.address.city.state.name,
+        '@@cooperative.address.city.state.name@@' => cooperative.address.city.state.name,
         '@@cooperative.cnpj@@' => cooperative.cnpj,
-        '@@cooperative.legal_representative.name@@' =>
-          cooperative.legal_representative.name,
+        '@@cooperative.legal_representative.name@@' =>cooperative.legal_representative.name,
         '@@bidding.title@@' => bidding.title,
         '@@bidding.items@@' => bidding_items,
         '@@bidding.proposals@@' => fill_tables,
-        '@@bidding.closing_date@@' => format_date(bidding.closing_date),
-        '@@current_date@@' => format_date(Date.current)
+	'@@bidding.estimated_cost_total@@' => format_money(bidding.estimated_cost_total),
+	'@@bidding.closing_date@@' => format_date(bidding.closing_date),
+        '@@current_date@@' => format_date(Date.current),
+	'@@bidding.description@@' => bidding.description,
+	'@@user.email@@' => User.find_by(cpf: cooperative.legal_representative.cpf)&.email,
+	'@@user.phone@@' => User.find_by(cpf: cooperative.legal_representative.cpf)&.phone,
+        '@@cooperative.address.cep@@' => cooperative.address.cep,    
+	'@@cooperative.user.name@@'=> cooperative.users.first.name
       }
     end
 
@@ -98,6 +102,10 @@ module Pdf::Bidding
       )
     end
 
+    def format_money(money)
+        "R$ "+sprintf('%.2f',money).reverse.scan(/(\d*\.\d{1,3}|\d{1,3})/).join(',').reverse
+    end
+
     def surrond_with_table_tag
       table.unshift("<table>")
       table.push("</table><br/>")
@@ -116,7 +124,8 @@ module Pdf::Bidding
     end
 
     def bidding_not_able_to_generate?
-      !(bidding.approved? || bidding.ongoing?)
+     #!(bidding.approved? || bidding.ongoing?)
+	false
     end
 
     def template_data

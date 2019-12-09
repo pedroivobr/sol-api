@@ -2,8 +2,8 @@ pt-BR:
   activerecord:
     models:
       cooperative:
-        one: Associação
-        other: Associações
+        one: Entidade
+        other: Entidades
     attributes:
       cooperative:
         name: Nome

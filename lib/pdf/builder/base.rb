@@ -30,7 +30,7 @@ module Pdf::Builder
     end
 
     def header_options
-      { margin_top: '2.5in', header_spacing: '40', header_center: header_center }
+      { margin_top: '2.5in', header_spacing: '20', header_center: header_center }
     end
 
     def filepath
