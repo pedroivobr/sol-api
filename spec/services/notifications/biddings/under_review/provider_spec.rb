@@ -33,7 +33,7 @@ RSpec.describe Notifications::Biddings::UnderReview::Provider, type: [:service, 
         let(:title)     { I18n.t("#{key}.title") % notification.title_args }
         let(:body)      { I18n.t("#{key}.body") % notification.body_args }
         let(:body_msg) do
-          "A licitação <strong>#{bidding.title}</strong> está em análise. Aguarde a análise das propostas pela associação <strong>#{cooperative.name}</strong>."
+          "A licitação <strong>#{bidding.title}</strong> está em análise. Aguarde a análise das propostas pela entidade <strong>#{cooperative.name}</strong>."
         end
 
         it { expect(title).to eq(title_msg) }

@@ -3,7 +3,7 @@ pt-BR:
     bidding:
       under_review_admin: &under_review_admin
         title: Licitação %s em análise.
-        body: A licitação <strong>%s</strong> está em análise. Aguarde a análise das propostas pela associação <strong>%s</strong>.
+        body: A licitação <strong>%s</strong> está em análise. Aguarde a análise das propostas pela entidade <strong>%s</strong>.
 
       under_review_provider:
         <<: *under_review_admin

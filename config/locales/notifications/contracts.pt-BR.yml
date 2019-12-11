@@ -5,8 +5,8 @@ pt-BR:
         title: Contrato recusado pelo fornecedor.
         body: O contrato da licitação <strong>%s</strong> foi recusado pelo fornecedor <strong>%s</strong>.
       refused_user:
-        title: Contrato recusado pela associação.
-        body: O contrato da licitação <strong>%s</strong> foi recusado pela associação <strong>%s</strong>.
+        title: Contrato recusado pela entidade.
+        body: O contrato da licitação <strong>%s</strong> foi recusado pela entidade <strong>%s</strong>.
       refused_all:
         title: Contrato recusado pelo sistema.
         body: O contrato da licitação <strong>%s</strong> foi recusado automaticamente pelo sistema.
