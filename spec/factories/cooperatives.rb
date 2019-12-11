@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :cooperative do
-    sequence(:name) { |n| "Associação #{n}" }
+    sequence(:name) { |n| "Entidade #{n}" }
     cnpj { CNPJ.generate }
 
     after :build do |object|

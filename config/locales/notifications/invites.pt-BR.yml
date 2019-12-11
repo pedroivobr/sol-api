@@ -3,7 +3,7 @@ pt-BR:
     invite:
       approved:
         title: Convite aceito.
-        body: Seu pedido para participar da licitação <strong>%s</strong> foi aprovado pela associação <strong>%s</strong>.
+        body: Seu pedido para participar da licitação <strong>%s</strong> foi aprovado pela entidade <strong>%s</strong>.
 
       pending:
         title: Análise de convite pendente.
@@ -11,4 +11,4 @@ pt-BR:
 
       reproved:
         title: Convite reprovado.
-        body: Seu pedido para participar da licitação <strong>%s</strong> foi negado pela associação <strong>%s</strong>.
+        body: Seu pedido para participar da licitação <strong>%s</strong> foi negado pela entidade <strong>%s</strong>.

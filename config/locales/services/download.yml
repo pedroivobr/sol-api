@@ -25,7 +25,7 @@ pt-BR:
           draw: Aguardando desempate
           desert: Deserto
 
-          column_5: Associação
+          column_5: Entidade
           column_6: Município
           column_7: Número
           column_8: Descrição (Objeto)
@@ -55,7 +55,7 @@ pt-BR:
 
           days: '%{day} dias'
 
-          column_4: Associação
+          column_4: Entidade
           column_5: Município
           column_6: Número
           column_7: Descrição (Objeto)
@@ -85,8 +85,8 @@ pt-BR:
 
           column_4: Contrato
           column_5: Classificações
-          column_6: Associação
-          column_7: CNPJ Associação
+          column_6: Entidade
+          column_7: CNPJ Entidade
           column_8: Número Licitação
           column_9: Fornecedor
           column_10: Documento Fornecedor
@@ -102,8 +102,8 @@ pt-BR:
           column_4: Número Licitação
           column_5: Fornecedor
           column_6: Documento Fornecedor
-          column_7: Associação
-          column_8: CNPJ Associação
+          column_7: Entidade
+          column_8: CNPJ Entidade
 
       supplier:
         biddings:
@@ -116,9 +116,9 @@ pt-BR:
           column_5: Fornecedor
           column_6: Documento Fornecedor
           column_7: Município Fornecedor
-          column_8: Associação
-          column_9: CNPJ Associação
-          column_10: Município Associação
+          column_8: Entidade
+          column_9: CNPJ Entidade
+          column_10: Município Entidade
           column_11: Tipo Licitação
           column_12: Modalidade
           column_13: Situação
@@ -155,8 +155,8 @@ pt-BR:
           column_4: Fornecedor
           column_5: Documento Fornecedor
           column_6: Contrato
-          column_7: Associação
-          column_8: CNPJ Associação
+          column_7: Entidade
+          column_8: CNPJ Entidade
           column_9: Número Licitação
           column_10: Valor total do contrato
 

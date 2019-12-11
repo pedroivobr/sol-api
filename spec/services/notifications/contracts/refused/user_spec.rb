@@ -51,10 +51,10 @@ RSpec.describe Notifications::Contracts::Refused::User, type: [:service, :notifi
         end
 
         describe 'I18n' do
-          let(:title_msg) { 'Contrato recusado pela associação.' }
+          let(:title_msg) { 'Contrato recusado pela entidade.' }
           let(:body_msg) do
             "O contrato da licitação <strong>#{bidding.title}</strong> foi recusado pela "\
-            "associação <strong>#{contract.proposal.provider.name}</strong>."
+            "entidade <strong>#{contract.proposal.provider.name}</strong>."
           end
           let(:key) { "notifications.#{notification.action}" }
           let(:title) { I18n.t("#{key}.title") % notification.title_args }
@@ -81,10 +81,10 @@ RSpec.describe Notifications::Contracts::Refused::User, type: [:service, :notifi
         end
 
         describe 'I18n' do
-          let(:title_msg) { 'Contrato recusado pela associação.' }
+          let(:title_msg) { 'Contrato recusado pela entidade.' }
           let(:body_msg) do
             "O contrato da licitação <strong>#{bidding.title}</strong> foi recusado pela "\
-            "associação <strong>#{contract.proposal.provider.name}</strong>."
+            "entidade <strong>#{contract.proposal.provider.name}</strong>."
           end
           let(:key) { "notifications.#{notification.action}" }
           let(:title) { I18n.t("#{key}.title") % notification.title_args }
