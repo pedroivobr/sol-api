@@ -22,7 +22,7 @@ module Pdf::Contract::Classification
       return unless contract.all_signed?
 
       dictionary.each do |key, value|
-        html.gsub!(key, value.to_s)
+        html.gsub!(key, value.to_s.dup.force_encoding(Encoding::UTF_8))
       end
 
       html
