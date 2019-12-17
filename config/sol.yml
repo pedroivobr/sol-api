@@ -1,41 +1,41 @@
 development:
   pdf_contract:
-    NAME_STATE: 'BAHIA'
+    NAME_STATE: 'RIO GRANDE DO NORTE'
     CONTRACT_JOIN: 'DEV - ENV - CONTRACT_JOIN'
-    COVENANT_RESOURCE: 'Projeto Bahia Produtiva'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável'
     LOAN: 'DEV - ENV - LOAN'
     DEPARTMENT_DEVELOPMENT: 'DEV - DEPARTMENT_DEVELOPMENT'
-    FORO: Salvador
+    FORO: Natal
     PRODUCTIVE_PROGRAM: 'DEV - PRODUCTIVE_PROGRAM'
     CREA: 'DEV - CREA'
     DEVELOPMENT_ACTION_COMPANY: 'DEV - DEVELOPMENT_ACTION_COMPANY'
   pdf_minute:
-    COVENANT_RESOURCE: 'Projeto Bahia Produtiva'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável'
 
 test:
   pdf_contract:
-    NAME_STATE: 'BAHIA'
+    NAME_STATE: 'RIO GRANDE DO NORTE'
     CONTRACT_JOIN: 'TEST - ENV - CONTRACT_JOIN'
-    COVENANT_RESOURCE: 'Projeto Bahia Produtiva'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável'
     LOAN: 'TEST - ENV - LOAN'
     DEPARTMENT_DEVELOPMENT: 'TEST - DEPARTMENT_DEVELOPMENT'
-    FORO: Salvador
+    FORO: Natal
     PRODUCTIVE_PROGRAM: 'TEST - PRODUCTIVE_PROGRAM'
     CREA: 'TEST - CREA'
     DEVELOPMENT_ACTION_COMPANY: 'TEST - DEVELOPMENT_ACTION_COMPANY'
   pdf_minute:
-    COVENANT_RESOURCE: 'Projeto Bahia Produtiva'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável'
 
 production:
   pdf_contract:
-    NAME_STATE: 'BAHIA'
+    NAME_STATE: 'RIO GRANDE DO NORTE'
     CONTRACT_JOIN: 'ENV - CONTRACT_JOIN'
-    COVENANT_RESOURCE: 'Projeto Bahia Produtiva'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável'
     LOAN: 'ENV - LOAN'
     DEPARTMENT_DEVELOPMENT: 'DEPARTMENT_DEVELOPMENT'
-    FORO: Salvador
+    FORO: Natal
     PRODUCTIVE_PROGRAM: 'PRODUCTIVE_PROGRAM'
     CREA: 'CREA'
     DEVELOPMENT_ACTION_COMPANY: 'DEVELOPMENT_ACTION_COMPANY'
   pdf_minute:
-    COVENANT_RESOURCE: 'Projeto Bahia Produtiva'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável'
