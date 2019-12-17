@@ -20,7 +20,7 @@ module Pdf::Bidding
       return if bidding_not_able_to_generate?
 
       dictionary.each do |key, value|
-        html.gsub!(key, value.to_s.force_encoding("UTF-8"))
+        html.gsub!(key, value.to_s.force_encoding(Encoding::UTF_8))
       end
 
       html
