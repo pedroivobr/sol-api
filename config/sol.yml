@@ -2,7 +2,7 @@ development:
   pdf_contract:
     NAME_STATE: 'RIO GRANDE DO NORTE'
     CONTRACT_JOIN: 'DEV - ENV - CONTRACT_JOIN'
-    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável do RN'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustent&aacute;vel do RN'
     LOAN: 'DEV - ENV - LOAN'
     DEPARTMENT_DEVELOPMENT: 'DEV - DEPARTMENT_DEVELOPMENT'
     FORO: Natal
@@ -10,13 +10,13 @@ development:
     CREA: 'DEV - CREA'
     DEVELOPMENT_ACTION_COMPANY: 'DEV - DEVELOPMENT_ACTION_COMPANY'
   pdf_minute:
-    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável do RN'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustent&aacute;vel do RN'
 
 test:
   pdf_contract:
     NAME_STATE: 'RIO GRANDE DO NORTE'
     CONTRACT_JOIN: 'TEST - ENV - CONTRACT_JOIN'
-    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável do RN'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustent&aacute;vel do RN'
     LOAN: 'TEST - ENV - LOAN'
     DEPARTMENT_DEVELOPMENT: 'TEST - DEPARTMENT_DEVELOPMENT'
     FORO: Natal
@@ -24,13 +24,13 @@ test:
     CREA: 'TEST - CREA'
     DEVELOPMENT_ACTION_COMPANY: 'TEST - DEVELOPMENT_ACTION_COMPANY'
   pdf_minute:
-    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável do RN'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustent&aacute;vel do RN'
 
 production:
   pdf_contract:
     NAME_STATE: 'RIO GRANDE DO NORTE'
     CONTRACT_JOIN: 'ENV - CONTRACT_JOIN'
-    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável do RN'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustent&aacute;vel do RN'
     LOAN: 'ENV - LOAN'
     DEPARTMENT_DEVELOPMENT: 'DEPARTMENT_DEVELOPMENT'
     FORO: Natal
@@ -38,4 +38,4 @@ production:
     CREA: 'CREA'
     DEVELOPMENT_ACTION_COMPANY: 'DEVELOPMENT_ACTION_COMPANY'
   pdf_minute:
-    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustentável do RN'
+    COVENANT_RESOURCE: 'Projeto Integrado de Desenvolvimento Sustent&aacute;vel do RN'
