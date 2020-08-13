@@ -247,7 +247,7 @@ RSpec.describe Coop::Biddings::LotsController, type: :controller do
             allow(RecalculateQuantityService).
               to receive(:call!).
               with(covenant: lot.bidding.covenant).
-              and_raise(ActiveRecord::RecordInvalid)
+              and_raise(RecalculateItemError)
 
             post_update
           end
@@ -261,11 +261,14 @@ RSpec.describe Coop::Biddings::LotsController, type: :controller do
 
         context 'errors' do
           let(:lot_group_item) { build(:lot_group_item, lot: lot, quantity: nil) }
-          let(:lot_group_item_errors) { { "lot_group_items_errors"=>[{}, {"quantity"=>"missing"}] } }
+          let(:lot_group_item_errors) { { error: 'value' } }
 
-          before { post_update }
+          before do
+            allow(controller.lot).to receive(:errors_as_json) { lot_group_item_errors }
+            post_update
+          end
 
-          it { expect(json['errors']).to include lot_group_item_errors }
+          it { expect(json.dig('errors', 'error')).to eq 'value' }
         end
 
       end

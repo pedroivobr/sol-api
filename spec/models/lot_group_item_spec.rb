@@ -14,7 +14,6 @@ RSpec.describe LotGroupItem, type: :model do
   end
 
   describe 'validations' do
-    it { is_expected.to validate_presence_of :quantity }
     it { is_expected.to validate_presence_of :lot }
     it { is_expected.to validate_presence_of :group_item }
 
@@ -29,8 +28,16 @@ RSpec.describe LotGroupItem, type: :model do
       describe 'quantity' do
         subject { lot_group_item.errors.details.dig(:quantity, 0, :error) }
 
+        context 'when nil' do
+          let(:lot_group_item) { build(:lot_group_item, quantity: nil) }
+
+          before { lot_group_item.valid? }
+
+          it { is_expected.to eq :greater_than }
+        end
+
         context 'when < 0' do
-          let(:lot_group_item) { build(:lot_group_item, quantity: -1) }
+          let(:lot_group_item) { build(:lot_group_item, quantity: -0.1) }
 
           before { lot_group_item.valid? }
 
@@ -38,7 +45,15 @@ RSpec.describe LotGroupItem, type: :model do
         end
 
         context 'when = 0' do
-          let(:lot_group_item) { build(:lot_group_item, quantity: 0) }
+          let(:lot_group_item) { build(:lot_group_item, quantity: 0.00) }
+
+          before { lot_group_item.valid? }
+
+          it { is_expected.to eq :greater_than }
+        end
+
+        context 'when = 0.001' do
+          let(:lot_group_item) { build(:lot_group_item, quantity: 0.001) }
 
           before { lot_group_item.valid? }
 
@@ -46,7 +61,7 @@ RSpec.describe LotGroupItem, type: :model do
         end
 
         context 'when > 0' do
-          let(:lot_group_item) { build(:lot_group_item, quantity: 1) }
+          let(:lot_group_item) { build(:lot_group_item, quantity: 0.01) }
 
           before { lot_group_item.valid? }
 
@@ -123,32 +138,32 @@ RSpec.describe LotGroupItem, type: :model do
             before do
               allow(lot_group_item).to receive(:new_record?) { true }
 
-              group_item.update_attribute(:available_quantity, 50)
+              group_item.update_attribute(:available_quantity, 50.29)
 
               lot_group_item.reload
             end
 
-            it { expect(lot_group_item.send(:max_quantity)).to eq 50 }
+            it { expect(lot_group_item.send(:max_quantity)).to eq 50.29 }
           end
 
           context 'when persisted' do
-            let!(:group_item) { create(:group_item, quantity: 100) }
+            let!(:group_item) { create(:group_item, quantity: 100.72) }
             let!(:bidding) { create(:bidding, status: :draft) }
             let(:lot) { create(:lot, bidding: bidding) }
 
             let!(:lot_group_item) do
-              create(:lot_group_item, group_item: group_item, lot: lot, quantity: 30)
+              create(:lot_group_item, group_item: group_item, lot: lot, quantity: 100.72)
             end
 
             before do
               allow(lot_group_item).to receive(:new_record?) { false }
 
-              group_item.update_attribute(:available_quantity, 50)
+              group_item.update_attribute(:available_quantity, 0)
 
               lot_group_item.reload
             end
 
-            it { expect(lot_group_item.send(:max_quantity)).to eq 80 }
+            it { expect(lot_group_item.send(:max_quantity)).to eq 100.72 }
           end
         end
       end
@@ -160,6 +175,12 @@ RSpec.describe LotGroupItem, type: :model do
   end
 
   describe 'callbacks' do
+    describe 'ensure_quantity' do
+      before { lot_group_item.quantity = '10,05'; lot_group_item.valid? }
+
+      it { expect(lot_group_item.quantity).to eq 10.05 }
+    end
+
     describe 'recount_group_item_quantity' do
       let!(:group_item) { create(:group_item, quantity: 100) }
       let!(:bidding) { create(:bidding, status: :draft) }
