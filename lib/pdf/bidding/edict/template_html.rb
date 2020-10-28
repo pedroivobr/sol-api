@@ -104,7 +104,7 @@ module Pdf::Bidding
     end
 
     def format_money(money)
-      ActionController::Base.helpers.number_to_currency(money)
+      ActionController::Base.helpers.number_to_currency(money).to_s
     end
 
     def surrond_with_table_tag
