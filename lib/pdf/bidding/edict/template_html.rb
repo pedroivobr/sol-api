@@ -104,7 +104,7 @@ module Pdf::Bidding
     end
 
     def format_money(money)
-        "R$ "+sprintf('%.2f',money).reverse.scan(/(\d*\.\d{1,3}|\d{1,3})/).join(',').reverse
+      ActionController::Base.helpers.number_to_currency(money)
     end
 
     def surrond_with_table_tag
