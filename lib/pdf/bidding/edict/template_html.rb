@@ -104,7 +104,7 @@ module Pdf::Bidding
     end
 
     def format_money(money)
-      number_to_currency(number, :unit => "R$ ", :separator => ",", :delimiter => ".")
+      number_to_currency(money, :unit => "R$ ", :separator => ",", :delimiter => ".")
     end
 
     def surrond_with_table_tag
